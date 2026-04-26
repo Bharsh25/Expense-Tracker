@@ -53,5 +53,4 @@ npm run dev   # frontend on :5173
 
 ---
 
-## Developer
-Harsh Viju Bhendarkar
+👨‍💻 Harsh Bhendarkar BE ( Artificial Intelligence & Data Science ), Full Stack Developer
