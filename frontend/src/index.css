@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+@theme {
+  /* Tailwind v4 registers these as font-syne and font-dm-sans utilities */
+  --font-syne: 'Syne', sans-serif;
+  --font-dm-sans: 'DM Sans', sans-serif;
+
+  --color-dark-bg: #0D0D0D;
+  --color-card-bg: #161616;
+  --color-border: #2a2a2a;
+  --color-primary: #00D9A6;
+  --color-income: #22c55e;
+  --color-expense: #ef4444;
+  --color-text-main: #f0f0f0;
+  --color-text-muted: #888888;
+}
+
+html, body {
+  background-color: var(--color-dark-bg);
+  color: var(--color-text-main);
+  font-family: var(--font-dm-sans);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-syne);
+}
+
+@layer utilities {
+  /* Font aliases so font-heading and font-body classes work everywhere */
+  .font-heading {
+    font-family: var(--font-syne);
+  }
+  .font-body {
+    font-family: var(--font-dm-sans);
+  }
+
+  .fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  .slide-in {
+    animation: slideIn 0.3s ease-out;
+  }
+
+  /* Custom scrollbar for dark theme */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-dark-bg);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-border);
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-text-muted);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Base input styling for consistency */
+input, select, textarea {
+  background-color: transparent;
+  color: var(--color-text-main);
+}
+input:focus, select:focus, textarea:focus {
+  outline: none;
+}
